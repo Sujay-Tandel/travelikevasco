@@ -16,7 +16,8 @@ var commentRoutes    = require("./routes/comments"),
     siteRoutes = require("./routes/sites"),
     indexRoutes      = require("./routes/index");
     
-mongoose.connect("mongodb://localhost/travel_like_vasco");
+// mongoose.connect("mongodb://localhost/travel_like_vasco");
+mongoose.connect("mongodb+srv://sujay:Code1110@travellikevasco-w53j3.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -28,7 +29,7 @@ app.use(flash());
 app.use(require("express-session")({
     secret: "Go, fly, roam, travel, voyage, explore, journey, discover, adventure.",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: falses
 }));
 
 app.use(passport.initialize());
