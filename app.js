@@ -29,7 +29,7 @@ app.use(flash());
 app.use(require("express-session")({
     secret: "Go, fly, roam, travel, voyage, explore, journey, discover, adventure.",
     resave: false,
-    saveUninitialized: falses
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
